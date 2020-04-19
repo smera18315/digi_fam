@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:math';
 import 'package:flutter_scatter/flutter_scatter.dart';
+import 'Subscriptions.dart';
 
 Random random = new Random();
 
@@ -33,6 +34,7 @@ void setup() //backend
         Material circularAvatar = Material(
           elevation: 4.0,
           shape: CircleBorder(),
+
           clipBehavior: Clip.hardEdge,
           color: Colors.transparent,
           child: Ink.image(
@@ -137,7 +139,7 @@ List<Widget> _tiles = const <Widget>[
   const _Example01Tile(Colors.indigo, "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR9Xo-Ec26iN0VPb-aIKqxDHGzxGVt39gqX7eRbua2NIBWM7xwc&usqp=CAU"),
   const _Example01Tile(Colors.pink, "https://cdn.iconscout.com/icon/free/png-512/medical-127-129383.png"),
   const _Example01Tile(Colors.purple, "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRzSxjt0GEoiXTt52rwTCvRZdA_GCQlkk1q4iNqBqO2yayd6a_z&usqp=CAU"),
-  const _Example01Tile(Colors.blue, "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRzSxjt0GEoiXTt52rwTCvRZdA_GCQlkk1q4iNqBqO2yayd6a_z&usqp=CAU"),
+  const _Example01Tile(Colors.blue, "https://img.icons8.com/cotton/2x/settings.png"),
   const _Example01Tile(Colors.blue, "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRzSxjt0GEoiXTt52rwTCvRZdA_GCQlkk1q4iNqBqO2yayd6a_z&usqp=CAU"),
 
 ];
@@ -219,7 +221,12 @@ class _CarouselTile extends StatelessWidget {
                   child: Container(
                       width: double.infinity,
                       child: Image.network(i, fit: BoxFit.cover)),
-                  onTap: () {}
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SubscriptionRow('Netflix')),
+                  );
+                  }
 
                 );
               },
@@ -242,26 +249,26 @@ class _HomeState extends State<Home> {
     return Scaffold(
         backgroundColor: Colors.black45,
         appBar: AppBar(
-          leading: GestureDetector(
-            onTap: () {},
-            child: IconButton(
-              icon: Icon(
-                Icons.menu,
-                color: Colors.white,
-              ),
-            ),
-          ),
+//          leading: GestureDetector(
+//            onTap: () {},
+//            child: IconButton(
+//              icon: Icon(
+//                Icons.menu,
+//                color: Colors.white,
+//              ),
+//            ),
+//          ),
           title: Text('DigiFam'),
           centerTitle: true,
           backgroundColor: Colors.green[400],
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.settings,
-                color: Colors.white,
-              ),
-            ),
-          ],
+//          actions: <Widget>[
+//            IconButton(
+//              icon: Icon(
+//                Icons.settings,
+//                color: Colors.white,
+//              ),
+//            ),
+//          ],
         ),
         body: Padding(
             padding: const EdgeInsets.only(top: 1),
