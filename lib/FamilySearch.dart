@@ -7,7 +7,6 @@ class FamilySearch extends StatefulWidget {
   @override
   _FamilySearchState createState() => _FamilySearchState();
 }
-
 class _FamilySearchState extends State<FamilySearch> {
   @override
   Widget build(BuildContext context) {
