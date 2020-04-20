@@ -1,3 +1,4 @@
+import 'package:digifam/FamilySearch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -333,6 +334,11 @@ class _FamilyState extends State<Family> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Family"),
+        actions: <Widget>[new IconButton( icon: new Icon(Icons.search), color: Colors.white, onPressed: (){
+          Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => FamilySearch(),
+          ));},),],
       ),
       body: Center(
         child: FittedBox(
