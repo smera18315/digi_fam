@@ -1,6 +1,7 @@
 package com.company;
 import javax.xml.transform.Result;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -17,6 +18,17 @@ public class Main {
         String number = "9192939495";
         String person_id ="10";
         String event_id ="5";
+        ArrayList<String> persons = new ArrayList<>();
+        persons.add("23");
+        persons.add("12");
+        persons.add("37");
+        persons.add("79");
+        persons.add("45");
+        persons.add("3");
+        persons.add("55");
+        persons.add("57");
+        persons.add("89");
+
 	// write your code here
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -85,6 +97,7 @@ public class Main {
 
                 System.out.println(rs.getString(1)+"  "+rs.getString(2));
             }
+
             rs=stmt.executeQuery(sql6);
             System.out.println("Answer for query :\n"+ sql6+"\n");
             while(rs.next()) {
@@ -146,12 +159,16 @@ public class Main {
 
                 System.out.println("success");
             }
-            r=stmt.executeUpdate(sql16);
-            System.out.println("Answer for query :\n"+ sql16+"\n");
-            if(r==1){
+            for(int i=0;i<persons.size();i++){
+                sql16 = "Insert into event_id_people_invited values(\"" +event_id+ "\", \"" +persons.get(i)+ "\")";
+                r=stmt.executeUpdate(sql16);
+                System.out.println("Answer for query :\n"+ sql16+"\n");
+                if(r==1){
 
-                System.out.println("success");
+                    System.out.println("success");
+                }
             }
+
             rs=stmt.executeQuery(sql17);
             System.out.println("Answer for query :\n"+ sql17+"\n");
             while(rs.next()) {
