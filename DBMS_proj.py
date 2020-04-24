@@ -122,22 +122,25 @@ def plot(ax,r1,r2,r3,name1,name2,name3):
 
 
     for i in range(len(r3)):
+        name3[i] = name3[i].replace(" ","\n")
         coord = (30*math.cos((i+1)*2*math.pi/len(r3)), 30*math.sin((i+1)*2*math.pi/len(r3)))        
         circ = plt.Circle(coord, 10, color = color[0])
         ax.add_patch(circ)
-        label = ax.annotate(name3[i], xy=coord, fontsize=8, ha="center",rotation = 15)
+        label = ax.annotate(name3[i], xy=coord, fontsize=8, ha="center",va ="center")
 
     for i in range(len(r2)):
+        name2[i] = name2[i].replace(" ","\n")
         coord = (50*math.cos((i+1)*2*math.pi/len(r2)),50*math.sin((i+1)*2*math.pi/len(r2)))         
         circ = plt.Circle(coord, 10, color = color[1])
         ax.add_patch(circ)
-        label = ax.annotate(name2[i], xy=coord, fontsize=8, ha="center",rotation = 15)
+        label = ax.annotate(name2[i], xy=coord, fontsize=8, ha="center",va ="center")
 
     for i in range(len(r1)):
+        name1[i] = name1[i].replace(" ","\n")
         coord = (70*math.cos((i+1)*2*math.pi/len(r1)), 70*math.sin((i+1)*2*math.pi/len(r1)))        
         circ = plt.Circle(coord, 10, color = color[2])
         ax.add_patch(circ)
-        label = ax.annotate(name1[i], xy=coord, fontsize=8, ha="center",rotation =15)
+        label = ax.annotate(name1[i], xy=coord, fontsize=8, ha="center",va ="center")
 
 def thirdpass():
     sq_q ="";
