@@ -10,7 +10,7 @@ def onepass():
         connection = mysql.connector.connect(host='localhost',
                                          database='digifam',
                                          user='root',
-                                         password='Banger2170@3')
+                                         password = 'pass')
         cursor = connection.cursor()
         if (connection.is_connected()):
             try:
